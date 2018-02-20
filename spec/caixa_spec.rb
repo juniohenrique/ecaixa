@@ -20,4 +20,10 @@ describe('Saque') do
     conta.saque(701)
     expect(conta.saldo).to eql 1000
   end
+  it('cenario com bug') do
+    conta = Conta.new('Fernando')
+    conta.saldo = 1000
+    conta.saque(701)
+    expect(conta.saldo).to eql 1001
+  end
 end
